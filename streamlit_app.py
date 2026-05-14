@@ -38,7 +38,7 @@ with col3:
 # Calculate vertical angle
 vertical_angle_rad = math.atan(altitude / distance)
 vertical_angle_deg = math.degrees(vertical_angle_rad) 
-vertical_angle_deg = 0 if my_value is None else vertical_angle_deg 
+vertical_angle_deg = 0 if vertical_angle_deg is None else vertical_angle_deg 
 
 # Manual input and comparison
 #st.header("Manual Input & Comparison")
