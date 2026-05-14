@@ -47,20 +47,20 @@ if manual_angle != 0.0:
     st.session_state.guess_made = True
     
     st.header("Calculated Angle")
-    st.metric("Vertical Angle to Point", f"{vertical_angle_deg:.2f}°")
+    st.metric("Vertical Angle to Point", f"{vertical_angle_deg:.0f}°")
     
     difference = abs(manual_angle - vertical_angle_deg)
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.metric("Your Angle", f"{manual_angle:.2f}°")
+        st.metric("Your Angle", f"{manual_angle:.0f}°")
     
     with col2:
-        st.metric("Calculated Angle", f"{vertical_angle_deg:.2f}°")
+        st.metric("Calculated Angle", f"{vertical_angle_deg:.0f}°")
     
     with col3:
-        st.metric("Difference", f"{difference:.2f}°")
+        st.metric("Difference", f"{difference:.0f}°")
     
     # Show accuracy percentage
     accuracy = max(0, 100 - (difference / vertical_angle_deg * 100)) if vertical_angle_deg > 0 else 100
