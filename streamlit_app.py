@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import math
 
-st.title("Vertical angle trainer v1.1")
+st.title("Vertical angle trainer v1.2")
 
 
 # Initialize session state for altitude and distance
