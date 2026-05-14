@@ -49,7 +49,7 @@ if manual_angle != 0.0:
     #st.header("Calculated Angle")
     #st.metric("Vertical Angle to Point", f"{vertical_angle_deg:.0f}°")
     
-    difference = abs(manual_angle - vertical_angle_deg)
+    difference = abs(manual_angle - (vertical_angle_deg + 0))
     
     col1, col2, col3 = st.columns(3)
     
