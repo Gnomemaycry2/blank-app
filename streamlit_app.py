@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import math
 
-st.title("Vertical angle trainer")
+st.title("Vertical angle trainer v1.1")
 
 
 # Initialize session state for altitude and distance
@@ -30,7 +30,7 @@ vertical_angle_deg = math.degrees(vertical_angle_rad)
 
 # Manual input and comparison
 st.header("Manual Input & Comparison")
-manual_angle = st.number_input("Enter your vertical angle (degrees):", value=0.0, step=0.1)
+manual_angle = st.number_input("Enter your vertical angle (degrees):", value=0.0, step=0.1, key='angle')
 
 if manual_angle != 0.0:
     st.session_state.guess_made = True
@@ -61,8 +61,10 @@ if manual_angle != 0.0:
     else:
         st.warning(f"❌ Try again! Accuracy: {accuracy:.1f}%")
 
+def reset_slider():
+    st.session_state.angle = 0.0
 # Reset button
-if st.button("🔄 Reset & New Values"):
+if st.button("🔄 Reset & New Values", on_click=reset_slider):
     st.session_state.altitude = random.randint(300, 3000)
     st.session_state.distance = random.randint(500, 12000)
     st.session_state.guess_made = False
