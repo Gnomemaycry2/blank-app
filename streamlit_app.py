@@ -66,10 +66,10 @@ if manual_angle != 0.0:
     accuracy = max(0, 100 - (difference / vertical_angle_deg * 100)) if vertical_angle_deg > 0 else 100
     
     if difference < 1:
-        st.success(f"✅ Great! Your angle is very close. Accuracy: {accuracy:.1f}%")
+        st.success(f"✅ Great! Your angle is very close. Accuracy: {accuracy:.0f}%")
     elif difference < 5:
-        st.info(f"⚠️ Good attempt! Accuracy: {accuracy:.1f}%")
+        st.info(f"⚠️ Good attempt! Accuracy: {accuracy:.0f}%")
     else:
-        st.warning(f"❌ Try again! Accuracy: {accuracy:.1f}%")
+        st.warning(f"❌ Try again! Accuracy: {accuracy:.0f}%")
 
 
