@@ -7,9 +7,14 @@ st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
+# Initialize session state for altitude and distance
+if 'altitude' not in st.session_state:
+    st.session_state.altitude = random.randint(300, 3000)
+    st.session_state.distance = random.randint(500, 12000)
+
 # Generate random altitude and distance
-altitude = random.randint(300, 3000)
-distance = random.randint(500, 12000)
+altitude = st.session_state.altitude
+distance = st.session_state.distance
 
 st.header("Random Values")
 col1, col2 = st.columns(2)
@@ -54,3 +59,9 @@ if manual_angle != 0.0:
         st.info(f"⚠️ Good attempt! Accuracy: {accuracy:.1f}%")
     else:
         st.warning(f"❌ Try again! Accuracy: {accuracy:.1f}%")
+
+# Reset button
+if st.button("🔄 Reset & New Values"):
+    st.session_state.altitude = random.randint(300, 3000)
+    st.session_state.distance = random.randint(500, 12000)
+    st.rerun()
