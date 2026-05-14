@@ -29,14 +29,14 @@ with col2:
 vertical_angle_rad = math.atan(altitude / distance)
 vertical_angle_deg = math.degrees(vertical_angle_rad)
 
-st.header("Calculated Angle")
-st.metric("Vertical Angle to Point", f"{vertical_angle_deg:.2f}°")
-
 # Manual input and comparison
 st.header("Manual Input & Comparison")
 manual_angle = st.number_input("Enter your vertical angle (degrees):", value=0.0, step=0.1)
 
 if manual_angle != 0.0:
+    st.header("Calculated Angle")
+    st.metric("Vertical Angle to Point", f"{vertical_angle_deg:.2f}°")
+    
     difference = abs(manual_angle - vertical_angle_deg)
     
     col1, col2, col3 = st.columns(3)
