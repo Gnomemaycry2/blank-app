@@ -11,6 +11,7 @@ st.write(
 if 'altitude' not in st.session_state:
     st.session_state.altitude = random.randint(300, 3000)
     st.session_state.distance = random.randint(500, 12000)
+    st.session_state.guess_made = False
 
 # Generate random altitude and distance
 altitude = st.session_state.altitude
@@ -34,6 +35,8 @@ st.header("Manual Input & Comparison")
 manual_angle = st.number_input("Enter your vertical angle (degrees):", value=0.0, step=0.1)
 
 if manual_angle != 0.0:
+    st.session_state.guess_made = True
+    
     st.header("Calculated Angle")
     st.metric("Vertical Angle to Point", f"{vertical_angle_deg:.2f}°")
     
@@ -64,4 +67,5 @@ if manual_angle != 0.0:
 if st.button("🔄 Reset & New Values"):
     st.session_state.altitude = random.randint(300, 3000)
     st.session_state.distance = random.randint(500, 12000)
+    st.session_state.guess_made = False
     st.rerun()
