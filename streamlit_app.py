@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import math
 
-st.set_page_config(layout='wide', page_title="Vertical angle trainer")
+st.set_page_config(layout='centered', page_title="Vertical angle trainer")
 
 
 st.title("Vertical angle trainer v1.2")
