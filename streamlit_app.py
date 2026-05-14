@@ -41,7 +41,7 @@ vertical_angle_deg = math.degrees(vertical_angle_rad)
 
 # Manual input and comparison
 st.header("Manual Input & Comparison")
-manual_angle = st.number_input("Enter your vertical angle (degrees):", value=0.0, step=0.1, key='angle')
+manual_angle = st.number_input("Enter your vertical angle (degrees):", value=0, step=1, key='angle')
 
 if manual_angle != 0.0:
     st.session_state.guess_made = True
