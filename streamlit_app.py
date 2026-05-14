@@ -2,7 +2,11 @@ import streamlit as st
 import random
 import math
 
+st.set_page_config(layout='wide', page_title="Vertical angle trainer")
+
+
 st.title("Vertical angle trainer v1.2")
+
 
 
 # Initialize session state for altitude and distance
