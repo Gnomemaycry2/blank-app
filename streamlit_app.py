@@ -28,7 +28,7 @@ with col3:
     def reset_slider():
         st.session_state.angle = 0.0
     # Reset button
-    if st.button("🔄 Reset & New Values", on_click=reset_slider):
+    if st.button("🔄 Reset & New Values", on_click=reset_slider, shortcut='Space'):
         st.session_state.altitude = random.randint(300, 3000)
         st.session_state.distance = random.randint(500, 12000)
         st.session_state.guess_made = False
