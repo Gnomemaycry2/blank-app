@@ -16,13 +16,24 @@ altitude = st.session_state.altitude
 distance = st.session_state.distance
 
 st.header("Random Values")
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
     st.metric("Altitude", f"{altitude} m")
 
 with col2:
     st.metric("Distance", f"{distance} m")
+
+with col3:
+    def reset_slider():
+        st.session_state.angle = 0.0
+    # Reset button
+    if st.button("🔄 Reset & New Values", on_click=reset_slider):
+        st.session_state.altitude = random.randint(300, 3000)
+        st.session_state.distance = random.randint(500, 12000)
+        st.session_state.guess_made = False
+        manual_angle = 0.0
+        st.rerun()
 
 # Calculate vertical angle
 vertical_angle_rad = math.atan(altitude / distance)
@@ -61,12 +72,4 @@ if manual_angle != 0.0:
     else:
         st.warning(f"❌ Try again! Accuracy: {accuracy:.1f}%")
 
-def reset_slider():
-    st.session_state.angle = 0.0
-# Reset button
-if st.button("🔄 Reset & New Values", on_click=reset_slider):
-    st.session_state.altitude = random.randint(300, 3000)
-    st.session_state.distance = random.randint(500, 12000)
-    st.session_state.guess_made = False
-    manual_angle = 0.0
-    st.rerun()
+
