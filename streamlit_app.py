@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+import math
 
 st.title("🎈 My new app")
 st.write(
@@ -18,3 +19,10 @@ with col1:
 
 with col2:
     st.metric("Distance", f"{distance} m")
+
+# Calculate vertical angle
+vertical_angle_rad = math.atan(altitude / distance)
+vertical_angle_deg = math.degrees(vertical_angle_rad)
+
+st.header("Calculated Angle")
+st.metric("Vertical Angle to Point", f"{vertical_angle_deg:.2f}°")
