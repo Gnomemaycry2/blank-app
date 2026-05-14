@@ -38,11 +38,12 @@ with col3:
 # Calculate vertical angle
 vertical_angle_rad = math.atan(altitude / distance)
 vertical_angle_deg = math.degrees(vertical_angle_rad) 
-vertical_angle_deg = 0 if vertical_angle_deg is None else vertical_angle_deg 
+
 
 # Manual input and comparison
 #st.header("Manual Input & Comparison")
-manual_angle = st.number_input("Enter your vertical angle (degrees):", value=None, step=1, key='angle')
+manual_angle = st.number_input("Enter your vertical angle (degrees):", value=None, step=1, key='angle') or 0
+
 
 if manual_angle != 0.0:
     st.session_state.guess_made = True
