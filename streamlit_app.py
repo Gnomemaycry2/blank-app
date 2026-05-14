@@ -2,10 +2,8 @@ import streamlit as st
 import random
 import math
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+st.title("Vertical angle trainer")
+
 
 # Initialize session state for altitude and distance
 if 'altitude' not in st.session_state:
@@ -68,4 +66,5 @@ if st.button("🔄 Reset & New Values"):
     st.session_state.altitude = random.randint(300, 3000)
     st.session_state.distance = random.randint(500, 12000)
     st.session_state.guess_made = False
+    manual_angle = 0.0
     st.rerun()
