@@ -15,7 +15,7 @@ if 'altitude' not in st.session_state:
 altitude = st.session_state.altitude
 distance = st.session_state.distance
 
-st.header("Random Values")
+#st.header("Random Values")
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -40,8 +40,8 @@ vertical_angle_rad = math.atan(altitude / distance)
 vertical_angle_deg = math.degrees(vertical_angle_rad)
 
 # Manual input and comparison
-st.header("Manual Input & Comparison")
-manual_angle = st.number_input("Enter your vertical angle (degrees):", value=0, step=1, key='angle')
+#st.header("Manual Input & Comparison")
+manual_angle = st.number_input("Enter your vertical angle (degrees):", step=1, key='angle')
 
 if manual_angle != 0.0:
     st.session_state.guess_made = True
